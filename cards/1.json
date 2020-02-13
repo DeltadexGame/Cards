@@ -1,0 +1,14 @@
+{
+	"ID": 0,
+	"Name": "Zombie",
+	"Type": 0,
+	"Attack": 2,
+	"Health": 4,
+	"EnergyCost": 2,
+	"Ability": {
+		"AbilityID": 1,
+		"Name": "Zombie",
+		"Description": "Ressurect this monster on half health once it dies.",
+		"Targeted": false
+	}
+}
