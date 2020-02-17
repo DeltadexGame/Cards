@@ -3,6 +3,7 @@ package scripts
 import (
 	"deltadex/gameplay"
 	"deltadex/gameplay/events"
+	"fmt"
 )
 
 func HandleMonsterDamageEvent(event events.Event) (events.Event, bool) {
@@ -11,5 +12,6 @@ func HandleMonsterDamageEvent(event events.Event) (events.Event, bool) {
 		return event, false
 	}
 	event.EventInfo["damage"] = event.EventInfo["damage"].(int) / 2
+	fmt.Println("Using heavy ability, damage was halved from " + string(event.EventInfo["damage"].(int)*2) + " to " + string(event.EventInfo["damage"].(int)) + ".")
 	return event, true
 }
