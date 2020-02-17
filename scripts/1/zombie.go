@@ -6,7 +6,7 @@ import (
 	"fmt"
 )
 
-func HandleMonsterDieEvent(event events.Event) {
+func HandleMonsterDieEvent(event *events.Event) {
 	monster := event.EventInfo["monster"].(gameplay.Monster)
 	if monster.Ability.AbilityID != 1 {
 		return

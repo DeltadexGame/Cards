@@ -1,0 +1,14 @@
+{
+	"ID": 1,
+	"Name": "Heavy",
+	"Type": 0,
+	"Attack": 4,
+	"Health": 4,
+	"EnergyCost": 3,
+	"Ability": {
+		"AbilityID": 2,
+		"Name": "Heavy",
+		"Description": "Monster takes half damage from other monsters.",
+		"Targeted": false
+	}
+}
