@@ -6,10 +6,10 @@ import (
 	"fmt"
 )
 
-func HandleMonsterDieEvent(event *events.Event) {
+func HandleMonsterDieEvent(event *events.Event) (events.Event, bool) {
 	monster := event.EventInfo["monster"].(gameplay.Monster)
 	if monster.Ability.AbilityID != 1 {
-		return
+		return Event{}, false
 	}
 	player := event.EventInfo["player"].(*gameplay.Player)
 	monster.MaxHealth = monster.MaxHealth / 2
@@ -19,4 +19,5 @@ func HandleMonsterDieEvent(event *events.Event) {
 	monster.Ability.Description = ""
 	player.SpawnMonster(monster, event.EventInfo["position"].(int))
 	fmt.Println("Spawned a monster with zombie ability")
+	return Event{}, false
 }
