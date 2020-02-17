@@ -15,7 +15,7 @@ func HandleMonsterDamageEvent(event events.Event) (events.Event, bool) {
 		return event, false
 	}
 	damage := info["damage"].(int)
-	info["damage"] = damage / 2
+	// info["damage"] = damage / 2
 	fmt.Println("Using heavy ability, damage was halved from " + strconv.Itoa(damage*2) + " to " + strconv.Itoa(damage) + ".")
 	event.EventInfo = info
 	return event, true
