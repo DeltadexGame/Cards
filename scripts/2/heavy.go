@@ -4,6 +4,7 @@ import (
 	"deltadex/gameplay"
 	"deltadex/gameplay/events"
 	"fmt"
+	"strconv"
 )
 
 func HandleMonsterDamageEvent(event events.Event) (events.Event, bool) {
@@ -16,6 +17,6 @@ func HandleMonsterDamageEvent(event events.Event) (events.Event, bool) {
 	damage := info["damage"].(int)
 	fmt.Println(damage)
 	// event.EventInfo["damage"] = damage / 2
-	fmt.Println("Using heavy ability, damage was halved from " + string(damage*2) + " to " + string(damage) + ".")
+	fmt.Println("Using heavy ability, damage was halved from " + strconv.Itoa(damage*2) + " to " + strconv.Itoa(damage) + ".")
 	return event, true
 }
