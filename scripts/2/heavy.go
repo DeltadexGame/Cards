@@ -7,6 +7,7 @@ import (
 )
 
 func HandleMonsterDamageEvent(event events.Event) (events.Event, bool) {
+	fmt.Println("running")
 	monster := event.EventInfo["monster"].(gameplay.Monster)
 	if monster.Ability.AbilityID != 2 {
 		return event, false
